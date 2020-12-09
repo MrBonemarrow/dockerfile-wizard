@@ -13,7 +13,6 @@ RUN apt-get update --fix-missing && \
     apt-get install -y wget bzip2 ca-certificates curl git && \
     # Custom tissue-factory logic
     apt-get --yes install build-essential && \
-    conda env create -f environment.yml && \
     # Cleanup before build
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
@@ -25,6 +24,10 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
+
+    # Pre-install dependencies for faster builds
+RUN /opt/conda/bin/conda env create -f environment.yml && \
+
 
 ENV TINI_VERSION v0.16.1
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini

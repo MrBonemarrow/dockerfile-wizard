@@ -1,0 +1,18 @@
+name: tissue-factory
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pygithub=1.53
+  - python=3.8
+  - pip=20.2.4
+  - cython=0.29.21
+  - anytree=2.8.0
+  - matplotlib=3.3.3
+  - numpy=1.19.2
+  - pylint=2.6
+  - pytest=6.1.1
+  - shapely=1.7.1
+  - pip:
+    - scipy==1.5.4
+    - tess==0.3.1
