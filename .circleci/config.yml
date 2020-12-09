@@ -14,6 +14,8 @@ jobs:
     steps:
       - checkout
 
+      - run: ls -l
+
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
