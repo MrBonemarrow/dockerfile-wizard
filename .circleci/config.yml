@@ -1,6 +1,6 @@
 image_config: &image_config
 
-  IMAGE_NAME: tisse-factory
+  IMAGE_NAME: tissue-factory
 
   IMAGE_TAG: 1.0
 
@@ -18,6 +18,6 @@ jobs:
 
       - run: docker build --no-cache -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
 
-      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG && sleep 10
+      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
 
 
