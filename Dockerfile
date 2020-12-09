@@ -1,5 +1,6 @@
 FROM debian:latest
 
+# From https://hub.docker.com/r/continuumio/miniconda3
 #  $ docker build . -t continuumio/miniconda3:latest -t continuumio/miniconda3:4.5.11
 #  $ docker run --rm -it continuumio/miniconda3:latest /bin/bash
 #  $ docker push continuumio/miniconda3:latest
