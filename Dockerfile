@@ -15,7 +15,7 @@ RUN apt-get update --fix-missing && \
     apt-get --yes install build-essential && \
     # Cleanup before build
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
@@ -26,8 +26,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86
     echo "conda activate base" >> ~/.bashrc
 
     # Pre-install dependencies for faster builds
-RUN /opt/conda/bin/conda env create -f environment.yml && \
-
+RUN /opt/conda/bin/conda env create -f environment.yml
 
 ENV TINI_VERSION v0.16.1
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
