@@ -26,6 +26,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86
     echo "conda activate base" >> ~/.bashrc
 
     # Pre-install dependencies for faster builds
+COPY environment.yml environment.yml
 RUN /opt/conda/bin/conda env create -f environment.yml
 
 ENV TINI_VERSION v0.16.1
