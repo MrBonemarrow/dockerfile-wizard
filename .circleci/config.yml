@@ -2,9 +2,9 @@ image_config: &image_config
 
   IMAGE_NAME: tissue-factory
 
-  IMAGE_TAG: 1.0
+  IMAGE_TAG: 1.1
 
-version: 2
+version: 3
 jobs:
   build:
     machine: true
